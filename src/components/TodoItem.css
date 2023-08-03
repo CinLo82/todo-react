@@ -1,0 +1,43 @@
+ li {
+    display: flex;
+    justify-content: space-between;
+    background-color: #FFA1CF;
+    width: 80%;
+    margin: 15px auto;
+    border-radius: 15px;
+    align-items: center;
+ }
+
+ .Icon {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    cursor: pointer;
+ }
+
+.Icon-check {
+    color: #A7FFE4;
+}
+
+.Icon-check--active {
+    color:#418e77;
+}
+
+.Icon-trash {
+    color: #9d436a;
+}
+
+.Icon-trash:hover {
+    color: #77143f;
+}
+
+.TodoIten-p {
+    font-size: 25px ;
+    font-weight: 500;
+    color:  #f44993;
+}
+
+.TodoIten-p-completed {
+    text-decoration: line-through;
+    color: #b6537e;
+}

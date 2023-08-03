@@ -1,6 +1,14 @@
+import { PlusIcon } from '@heroicons/react/24/solid'
+import './CreateTodoButton.css'
+
 function CreateTodoButton() {
     return(
-      <button>+</button>
+      <button 
+        className='createTodoButton' 
+     
+      >
+        <PlusIcon />
+      </button>
     )
   }
   
