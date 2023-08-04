@@ -5,28 +5,47 @@ import { TodoList } from './components/TodoList'
 import { TodoItem } from './components/TodoItem'
 import { CreateTodoButton } from './components/CreateTodoButton'
 
-const defaultTodos = [
-  { text: 'Hacer la tarea', completed: true },
-  { text: 'Estudiar Ingles', completed: false },
-  { text: 'Ir al gym', completed: true },
-  { text: 'Alimentar a los gatos', completed: true },
-  { text: 'Lavar los platos', completed: false },
-  { text: 'usar estados derivados', completed: true }
 
-]
+// const defaultTodos = [
+//   { text: 'Hacer la tarea', completed: true },
+//   { text: 'Estudiar Ingles', completed: false },
+//   { text: 'Ir al gym', completed: true },
+//   { text: 'Alimentar a los gatos', completed: true },
+//   { text: 'Lavar los platos', completed: false },
+//   { text: 'usar estados derivados', completed: true }
+// ]
+// localStorage.setItem('TODOS_V1',JSON.stringify(defaultTodos))
+// localStorage.removeItem('TODOS_V1', defaultTodos)
 
 function App() {
-  const [todos, setTodos] = useState(defaultTodos)
+  const localStorageTodos = localStorage.getItem('TODOS_V1')
+
+  let parsedTodos = JSON.parse(localStorageTodos) || [];
+
+  if (!localStorageTodos) {
+    localStorage.setItem('TODOS_V1', JSON.stringify([]))
+    parsedTodos = []
+  } else {
+    parsedTodos = JSON.parse(localStorageTodos)
+  }
+  
+  const [todos, setTodos] = useState(parsedTodos)
   const [searchValue, setSearchValue] = useState('')
 
   const completedTodos = todos.filter(todo => !!todo.completed).length
   const totalTodos = todos.length
+
   const searchedTodos = todos.filter(
     (todo) => {
       const todoText = todo.text.toLowerCase()
       const searchText = searchValue.toLowerCase()
       return todoText.includes(searchText)
-    })
+  })
+
+    const saveTodos = (newTodos) => {
+      localStorage.setItem('TODOS_V1', JSON.stringify(newTodos))
+      setTodos(newTodos)
+    }
 
     const completeTodo = (text) => {
       const newTodos = [...todos]
@@ -34,7 +53,7 @@ function App() {
         (todo) => todo.text === text
       )
       newTodos[todoIndex].completed = true
-      setTodos(newTodos)
+      saveTodos(newTodos)
     }
 
     const deleteTodo = (text) => {
@@ -43,7 +62,7 @@ function App() {
         (todo) => todo.text === text
       )
       newTodos.splice(todoIndex, 1)
-      setTodos(newTodos)
+      saveTodos(newTodos)
     }
 
     return (
@@ -70,11 +89,9 @@ function App() {
             ))
           }
         </TodoList>
-
         <CreateTodoButton />
       </>
   )
 }
-
 
 export { App }
