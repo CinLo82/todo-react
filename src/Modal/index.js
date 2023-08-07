@@ -4,8 +4,8 @@ import './Modal.css'
 
 function Modal ({ children }) {
     return createPortal(
-        <div className="modal">
-            <div className="modal-background">
+        <div className="Modal">
+            <div className="Modal-background">
                { children } 
             </div> 
         </div>,
