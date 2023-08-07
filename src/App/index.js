@@ -51,15 +51,15 @@ function App() {
     }
   return (
     <AppUi 
-    loading={loading}
-    error={error}
-    completedTodos={completedTodos}
-    totalTodos={totalTodos}
-    searchValue={searchValue}
-    searchedTodos={searchedTodos}
-    setSearchValue={setSearchValue}
-    completeTodo={completeTodo}
-    deleteTodo={deleteTodo}
+      loading={loading}
+      error={error}
+      completedTodos={completedTodos}
+      totalTodos={totalTodos}
+      searchValue={searchValue}
+      searchedTodos={searchedTodos}
+      setSearchValue={setSearchValue}
+      completeTodo={completeTodo}
+      deleteTodo={deleteTodo}
     />
   )
 }
