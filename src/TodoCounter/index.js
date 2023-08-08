@@ -8,8 +8,14 @@ function TodoCounter() {
     totalTodos
   } = React.useContext(TodoContext)
 
+    const noTodos = totalTodos === 0 && completedTodos === 0
+    if (noTodos) {
+      return null;
+    }
+
     return(
-      totalTodos === completedTodos ? 
+      
+      totalTodos === completedTodos? 
         <h1 className='TodoCounter'>Felicitaciones, completaste todas las tareas!</h1>
           :
         <h1 className='TodoCounter' >

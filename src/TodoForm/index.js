@@ -26,20 +26,27 @@ function TodoForm() {
 
     return (
         <form onSubmit={onSubmit}>
-            <label>Escribe tu nuevo Todo</label>
+            <label>¡Escribe tu Nueva Tarea!</label>
             <textarea 
                 placeholder='Hacer las compras'
                 value={newTodoValue}
                 onChange={onChange}
+                required
             />
             <div className='TodoForm-ButtonContainer'>
                 <button 
+                    type="button"
                     className='TodoForm-button TodoForm-button--cancel'
-                    onCancel={onCancel}
+                    onClick={onCancel}
                 >
                     Cancelar
                 </button>
-                <button className='TodoForm-button TodoForm-button--add'>Agregar</button>
+                <button 
+                    className='TodoForm-button TodoForm-button--add'
+                    type="submit"
+                >
+                    Agregar
+                </button>
             </div>
         </form>
     )

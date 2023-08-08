@@ -20,7 +20,7 @@
 }
 
 .Icon-check--active {
-    color:#418e77;
+    color:#7ae69b;
 }
 
 .Icon-trash {
@@ -35,6 +35,7 @@
     font-size: 25px ;
     font-weight: 500;
     color:  #f44993;
+    text-align: center;
 }
 
 .TodoIten-p-completed {

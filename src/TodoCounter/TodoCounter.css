@@ -3,11 +3,13 @@
     text-align: center;
     margin: 0;
     padding: 48px;
-    color: #ac21a3;
-    font-weight: normal;
+    color: #FF74B1;
+    font-weight: 700;
+
 }
 
 .TodoCounter span {
     font-weight: bold;
+    font-family: 'Montserrat';
 }
 

@@ -1,16 +1,23 @@
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  place-items: center;
   margin: 0;
   padding: 0;
   font-family: Montserrat;
-  margin: 0;
   box-sizing: border-box;
   background-color: #FFD6EC;
-  border: solid 50px #A7FFE4;
-     
+
 }
 
 #root {
-  margin: 0;
+  margin-top: 50px;
   position: relative;
   min-height: 100hv;
+  background-color: #A7FFE4;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 50px rgba(102, 12, 96, 0.25);
+  border: solid 5px #FF74B1;
 }

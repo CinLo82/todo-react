@@ -9,6 +9,8 @@ import { TodosError } from '../TodosError'
 import { TodoContext } from '../TodoContext'
 import { TodoForm } from '../TodoForm'
 import { Modal } from '../Modal'
+import { EmptyTodos } from '../EmptyTodos'
+import { TodoTitle } from '../TodoTitle'
 
 
 function AppUi() {
@@ -19,17 +21,17 @@ function AppUi() {
         completeTodo,
         deleteTodo,
         openModal,
-        setOpenModal
     } = React.useContext(TodoContext)
 
     return (
         <>
+        <TodoTitle />
         <TodoCounter />
         <TodoSearch />
         <TodoList>
             {loading && <TodosLoading />}
             {error && <TodosError />}
-            {(!loading && searchedTodos.length === 0) && <p>Crea Tu Primer TODO!</p>}
+            {(!loading && searchedTodos.length === 0) && <EmptyTodos />}
             {
             searchedTodos.map(todo => (
                 <TodoItem 

@@ -33,7 +33,7 @@ textarea {
 }
 
 textarea::placeholder {
-    color: #FF74B1;
+    color: rgba(255, 116, 177, 0.5);;
     font-family: 'Montserrat';
     font-weight: 400;
 }

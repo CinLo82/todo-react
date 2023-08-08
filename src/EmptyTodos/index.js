@@ -1,6 +1,11 @@
+import './EmptyTodos.css'
+
 function EmptyTodos() {
     return(
-        <h1>Crea tu Primer Todo!</h1>
+        <div className="emptyContainer">
+            <p className="emptyTodo">¡Whoops! Parece que aún no hay Tareas</p>
+            <p className="emptyTodo">¡Crea tu primer Tarea!</p>
+        </div>
     )
 }
 
