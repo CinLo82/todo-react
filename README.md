@@ -5,10 +5,10 @@ Este repositorio contiene una aplicación de lista de tareas sencilla creada con
 ## Diseño
 
 <div align="center">
-	<img alt="image-todo" src="./src/aseets/Todo.png" width="500">
-    
+	<img alt="image-todo" src="./src/aseets/Todo.png" width="500" />
 </div>
+ 
 <div align="center">
-	<img alt="image-todo" src="./src/aseets/Todo-add.png" width="500">
+	<img alt="image-todo" src="./src/aseets/Todo-add.png" width="500"/>
 </div>
 
