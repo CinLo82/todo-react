@@ -13,3 +13,7 @@
     font-family: 'Montserrat';
 }
 
+.TodoCounter--loading {
+    opacity: 25%;
+}
+
