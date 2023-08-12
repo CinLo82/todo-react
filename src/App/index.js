@@ -11,7 +11,7 @@ import { EmptyTodos } from '../EmptyTodos'
 import { TodoTitle } from '../TodoTitle'
 import { TodoHeader } from '../TodoHeader'
 import { useTodos } from './useTodos'
-import { ChangeAlertWithStorageListener } from '../ChangeAlert'
+import { ChangeAlert } from '../ChangeAlert'
 
 function App() {
   const { 
@@ -90,7 +90,7 @@ function App() {
          openModal={openModal}
          setOpenModal={setOpenModal}
       />
-      <ChangeAlertWithStorageListener 
+      <ChangeAlert 
         sincronize={sincronizeTodos}
       />
     </>
