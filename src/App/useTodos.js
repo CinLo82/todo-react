@@ -4,9 +4,11 @@ import { useLocalStorage } from "./useLocalStorage"
 function useTodos() {
     const {
         item: todos,
-        saveItem: saveTodos, 
+        saveItem: saveTodos,
+        sincronizeItem: sincronizeTodos,
         loading, 
-        error} = useLocalStorage('TODOS_V1', [])
+        error
+    } = useLocalStorage('TODOS_V1', [])
 
     const [searchValue, setSearchValue] = useState('')
     const [openModal, setOpenModal] = useState(false)
@@ -30,7 +32,6 @@ function useTodos() {
         })
         saveTodos(newTodos)
     }
-    
     
     const completeTodo = (text) => {
         const newTodos = [...todos]
@@ -62,7 +63,8 @@ function useTodos() {
             deleteTodo, 
             openModal,
             setOpenModal,
-            addTodo
+            addTodo,
+            sincronizeTodos
             }
         )
 }
