@@ -30,11 +30,6 @@ function useLocalStorage(itemName, initialValue) {
     type: actionTypes.sincronize,
   })
 
-  // const [sincronizeditem, setSincronizedItem] = useState(true)
-  // const [item, setItem] = useState(initialValue)
-  // const [loading, setLoading] = useState(true)
-  // const [error, setError] = useState(false)
-
   useEffect(() => {
     setTimeout(() => {
       try {

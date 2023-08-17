@@ -14,21 +14,27 @@ import { useTodos } from './useTodos'
 import { ChangeAlert } from '../ChangeAlert'
 
 function App() {
-  const { 
+  const { states, stateUpdates } = useTodos()
+
+  const {
     loading,
     error,
+    totalTodos,
+    completedTodos,
+    searchValue,
     searchedTodos,
+    openModal,
+  } = states 
+
+  const {
+    setSearchValue,
+    addTodo,
     completeTodo,
     deleteTodo,
-    openModal,
-    completedTodos,
-    totalTodos,
-    searchValue,
-    setSearchValue,
     setOpenModal,
-    addTodo,
     sincronizeTodos,
-} = useTodos()
+  } = stateUpdates 
+
   return (
     <>
       <TodoHeader>
@@ -60,22 +66,7 @@ function App() {
           />
         )}
       /> 
-      {/* <TodoList>
-          {loading && <TodosLoading />}
-          {error && <TodosError />}
-          {(!loading && searchedTodos.length === 0) && <EmptyTodos />}
-          {
-          searchedTodos.map(todo => (
-              <TodoItem 
-              key={todo.text} 
-              text={todo.text} 
-              completed={todo.completed}
-              onComplete={() => completeTodo(todo.text)}
-              onDelete={() => deleteTodo(todo.text)}
-              />
-          ))
-          }
-      </TodoList> */}
+
       {
           openModal && (
               <Modal>
