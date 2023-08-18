@@ -1,6 +1,4 @@
-import { CheckCircleIcon } from '@heroicons/react/24/solid'
-import { TrashIcon } from '@heroicons/react/24/solid'
-
+import { CheckCircleIcon,TrashIcon, PencilSquareIcon } from '@heroicons/react/24/solid'
 import './TodoItem.css'
 
 function TodoItem(props) {
@@ -10,9 +8,16 @@ function TodoItem(props) {
           onClick={() => props.onComplete()}
         />
         <p className={`TodoIten-p ${props.completed && 'TodoIten-p-completed'}`}>{props.text}</p>
-        <TrashIcon className='Icon Icon-trash icon-trash-delete'
+        <div className='Icons-trashEdit'>
+          <PencilSquareIcon className='Icon Icon-edit icon-edit-edit'
+            onClick={()=>  props.onEdit()}
+          />
+          <TrashIcon className='Icon Icon-trash icon-trash-delete'
           onClick={()=>  props.onDelete()}
-        />
+          />
+    
+        </div>
+        
       </li>
     )
   }

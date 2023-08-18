@@ -39,14 +39,15 @@ function HomePage() {
     <>
       <TodoHeader>
           <TodoTitle />
-          <TodoCounter 
-          completedTodos={completedTodos}
-          totalTodos={totalTodos}
-          />
           <TodoSearch 
           searchValue={searchValue}
           setSearchValue={setSearchValue}
           />
+          <TodoCounter 
+          completedTodos={completedTodos}
+          totalTodos={totalTodos}
+          />
+         
       </TodoHeader>
       <TodoList 
         error={error}
@@ -58,11 +59,12 @@ function HomePage() {
         onEmptyTodos={() => <EmptyTodos />}
         render={todo => (
           <TodoItem 
-            key={todo.text} 
+            key={todo.id} 
             text={todo.text} 
             completed={todo.completed}
-            onComplete={() => completeTodo(todo.text)}
-            onDelete={() => deleteTodo(todo.text)}
+            onEdit={() => console.log('edit todo')}
+            onComplete={() => completeTodo(todo.id)}
+            onDelete={() => deleteTodo(todo.id)}
           />
         )}
       /> 
