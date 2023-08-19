@@ -77,11 +77,11 @@ function useTodos() {
         )
 }
 
-function newTodoId(TodoList) {
-    if (!TodoList.length) {
+function newTodoId(todoList) {
+    if (!todoList.length) {
         return 1
     }
-    const idList = TodoList.map(todo => todo.id)
+    const idList = todoList.map(todo => todo.id)
     const idMax = Math.max(...idList)
     return idMax + 1
 }
