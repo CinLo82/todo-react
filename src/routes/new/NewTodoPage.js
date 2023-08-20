@@ -1,6 +1,15 @@
+import { TodoForm } from "../../ui/TodoForm"
+import { useTodos } from "../useTodos"
+
 function NewTodoPage () {
+    const { stateUpdates } = useTodos()
+    const { addTodo } = stateUpdates
     return (
-        <p>Nueva Tarea</p>
+        <TodoForm 
+            label='Escribe tu Nueva Tarea'
+            submitText='Añadir'
+            submitEvent={(text) => addTodo(text)}
+        />
     )
 }
 

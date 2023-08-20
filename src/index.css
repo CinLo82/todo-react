@@ -15,9 +15,6 @@ body {
   margin-top: 50px;
   position: relative;
   min-height: 100hv;
-  background-color: #A7FFE4;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0px 5px 50px rgba(102, 12, 96, 0.25);
-  border: solid 5px #FF74B1;
 }

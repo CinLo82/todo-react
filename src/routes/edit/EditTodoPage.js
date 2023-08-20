@@ -1,6 +1,19 @@
+import { useParams } from "react-router-dom"
+import { TodoForm } from "../../ui/TodoForm"
+import { useTodos } from "../useTodos"
+
 function EditTodoPage () {
+    const params = useParams()
+    const id = Number(params.id)
+
+    const { stateUpdates } = useTodos()
+    const { editTodo } = stateUpdates
     return (
-        <p>Editar Tarea</p>
+        <TodoForm 
+            label='Edita tu Tarea'
+            submitText='Editar'
+            submitEvent={(newText) => editTodo(id, newText)}
+        />
     )
 }
 

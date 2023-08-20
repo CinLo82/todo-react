@@ -9,6 +9,7 @@ form {
     background-color:  #FFA1CF;
     border-radius: 10px;
     box-shadow: 0px 5px 50px rgba(102, 12, 96, 0.25);
+    margin: 0 auto;
 }
 
 label {
