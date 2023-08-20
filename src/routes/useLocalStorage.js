@@ -52,7 +52,7 @@ function useLocalStorage(itemName, initialValue) {
         onError(true)
       }
       
-    }, 2000)
+    }, 1000)
   },[sincronizedItem])
   
   const saveItem = (newItem) => {

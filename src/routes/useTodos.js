@@ -11,7 +11,6 @@ function useTodos() {
     } = useLocalStorage('TODOS_V2', [])
 
     const [searchValue, setSearchValue] = useState('')
-    //const [openModal, setOpenModal] = useState(false)
     
     const completedTodos = todos.filter(todo => !!todo.completed).length
     const totalTodos = todos.length
@@ -35,6 +34,13 @@ function useTodos() {
         saveTodos(newTodos)
     }
     
+    const getTodo = (id) => {
+        const todoIndex = todos.findIndex(
+            (todo) => todo.id === id
+            )
+            return todos[todoIndex]
+    }
+
     const completeTodo = (id) => {
         const todoIndex = todos.findIndex(
             (todo) => todo.id === id
@@ -70,7 +76,7 @@ function useTodos() {
         completedTodos,
         searchValue,
         searchedTodos,
-        //openModal,
+        getTodo
     }
 
     const stateUpdates = {
@@ -79,7 +85,6 @@ function useTodos() {
         completeTodo,
         deleteTodo,
         editTodo,
-        //setOpenModal,
         sincronizeTodos,
     }
 
